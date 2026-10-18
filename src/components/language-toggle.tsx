@@ -23,19 +23,24 @@ export function useLanguage() {
 
 export function LanguageProvider({ children }: { children: React.ReactNode }) {
   const [lang, setLangState] = useState<Lang>("ur");
+  const [ready, setReady] = useState(false);
 
   useEffect(() => {
     const saved = window.localStorage.getItem(STORAGE_KEY);
-    if (saved === "en" || saved === "ur") {
-      setLangState(saved);
-    }
+    const next = saved === "en" || saved === "ur" ? saved : "ur";
+    setLangState(next);
+    document.documentElement.lang = next;
+    document.documentElement.dir = next === "ur" ? "rtl" : "ltr";
+    window.localStorage.setItem(STORAGE_KEY, next);
+    setReady(true);
   }, []);
 
   useEffect(() => {
+    if (!ready) return;
     document.documentElement.lang = lang;
     document.documentElement.dir = lang === "ur" ? "rtl" : "ltr";
     window.localStorage.setItem(STORAGE_KEY, lang);
-  }, [lang]);
+  }, [lang, ready]);
 
   function setLang(next: Lang) {
     setLangState(next);
