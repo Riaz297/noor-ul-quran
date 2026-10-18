@@ -1,0 +1,195 @@
+:root {
+  --bg: #f4f1e8;
+  --ink: #1f2a22;
+  --green: #1b5e4a;
+  --gold: #c4a35a;
+  --card: #fffdf6;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  min-height: 100%;
+  background: var(--bg);
+  color: var(--ink);
+}
+
+html[lang="ur"],
+html[lang="ur"] body {
+  font-family: "Noto Nastaliq Urdu", "Georgia", serif;
+}
+
+html[lang="en"],
+html[lang="en"] body {
+  font-family: "Source Sans 3", "Segoe UI", sans-serif;
+  line-height: 1.6;
+}
+
+body {
+  line-height: 2;
+}
+
+.page {
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 48px 20px;
+}
+
+.brand {
+  color: var(--green);
+  font-size: 2.2rem;
+  margin: 0 0 8px;
+}
+
+.card {
+  background: var(--card);
+  border: 1px solid #e4dcc4;
+  border-radius: 18px;
+  padding: 24px;
+  box-shadow: 0 10px 30px rgba(31, 42, 34, 0.06);
+}
+
+.note {
+  color: #4d5b52;
+  font-size: 0.95rem;
+}
+
+.en {
+  font-family: "Source Sans 3", "Segoe UI", sans-serif;
+  color: #5a665e;
+  font-size: 0.9rem;
+}
+
+.topbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 8px;
+}
+
+.lang-toggle {
+  display: flex;
+  gap: 6px;
+  background: #efe6cf;
+  border-radius: 999px;
+  padding: 4px;
+}
+
+.lang-toggle button {
+  border: 0;
+  background: transparent;
+  border-radius: 999px;
+  padding: 4px 12px;
+  font: inherit;
+  cursor: pointer;
+  color: var(--ink);
+}
+
+.lang-toggle button.active {
+  background: var(--green);
+  color: #fff;
+}
+
+.list {
+  list-style: none;
+  padding: 0;
+  margin: 20px 0 0;
+}
+
+.list li {
+  border-top: 1px solid #e4dcc4;
+  padding: 12px 0;
+}
+
+.list b {
+  color: var(--green);
+}
+
+.soon {
+  display: inline-block;
+  margin-right: 8px;
+  font-size: 0.8rem;
+  color: #7a6a3a;
+  background: #f3e6c0;
+  border-radius: 999px;
+  padding: 0 10px;
+}
+
+a {
+  color: var(--green);
+  text-decoration: none;
+}
+
+.list a {
+  color: inherit;
+}
+
+.form {
+  display: grid;
+  gap: 10px;
+  margin: 18px 0;
+}
+
+.form label {
+  color: var(--green);
+}
+
+.field {
+  width: 100%;
+  border: 1px solid #e4dcc4;
+  border-radius: 12px;
+  padding: 10px 12px;
+  font: inherit;
+  background: #fff;
+}
+
+.field.area {
+  min-height: 110px;
+  resize: vertical;
+}
+
+.primary {
+  justify-self: start;
+  border: 0;
+  border-radius: 12px;
+  padding: 8px 18px;
+  background: var(--green);
+  color: #fff;
+  font: inherit;
+  cursor: pointer;
+}
+
+.primary:disabled {
+  opacity: 0.45;
+  cursor: not-allowed;
+}
+
+.section-title {
+  color: var(--green);
+  font-size: 1.15rem;
+  margin: 24px 0 0;
+}
+
+.attend-row {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  cursor: pointer;
+}
+
+.attend-row input[type="checkbox"] {
+  margin-top: 10px;
+  width: 18px;
+  height: 18px;
+}
+
+.prayer-grid {
+  display: grid;
+  gap: 10px;
+  margin-top: 10px;
+}
